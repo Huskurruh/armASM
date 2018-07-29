@@ -16,7 +16,7 @@ msgText:
 	.text
 
 	@ Subroutines
-	@ 	displayAscii, display ascii message to stdout
+	@ 	displayAscii, display ASCII message to stdout
 	@		R1: Pointer to start of ascii message
 	@		R2: Length of message
 	@		LR: Contains return address
@@ -27,7 +27,3 @@ displayAscii:
 	mov	R7, #4		@ Code for svc to write string
 	svc	0		@ Command to write string
 	bx	LR		@ Return to calling program
-
-	.end
-
-	

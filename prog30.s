@@ -1,0 +1,18 @@
+	.global _start
+
+_start:
+	ldr	R1, =msgtext	@ Load address of text
+	mov	R2, #20		@ Load text length
+	mov	R0, #1		@ Load display mode stdout
+	mov	R7, #4		@ Tell svc to display text
+	svc	0   		@ Launch call to display text
+	mov	R0, #0		@ Excecution code "everything fine"
+	mov 	R7, #1		@ Tell call to terminate program
+	svc	0   		@ Terminate program
+
+	.data
+
+msgtext:
+	.ascii	"Hello from assembly\n"
+
+	.end
